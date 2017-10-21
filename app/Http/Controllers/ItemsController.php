@@ -104,6 +104,12 @@ class ItemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+         // Find Item
+         $item = Item::find($id);
+         $item->delete();
+         
+         $response = ['response' => 'Item deleted', 'success' => true];
+
+         return $response;
     }
 }
